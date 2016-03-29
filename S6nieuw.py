@@ -36,7 +36,7 @@ for i in range(len(lat)):
     cd=lon[i]-lonbss[i]
     lat5=np.append(lat5, ab)
     lon5=np.append(lon5, cd)
-    jekfle
+    
     
 print lat5[0:10]
 print len(lat5)

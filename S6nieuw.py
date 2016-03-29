@@ -36,7 +36,7 @@ for i in range(len(lat)):
     cd=lon[i]-lonbss[i]
     lat5=np.append(lat5, ab)
     lon5=np.append(lon5, cd)
-    
+    print "hee"
 print lat5[0:10]
 print len(lat5)
 print len(lon5)
@@ -72,7 +72,7 @@ for i in range(len(lat6)):
     lon4=np.append(lon4,b)
 print lat4[0:5]
 lat2=np.delete(np.insert(lat4,0,lat4[0]),-1)
-print lat2
+print lat2[0:5]
 lon2=np.delete(np.insert(lon4,0,lon4[0]),-1)
 latcor=R*(lat4-lat2)
 loncor=R*(lon4-lon2)*np.cos(lat4)
@@ -122,7 +122,7 @@ print len(tijd1)
 tijdsverschil=tijd1-np.delete(np.insert(tijd1,0,0),-1)
 u=(latcor/tijdsverschil)
 v=(loncor/tijdsverschil)
-d=2*R*np.arcsin(np.sqrt(np.power(np.sin(lat4-lat2/2),2)+np.cos(lat2)*np.cos(lat4)*np.power(np.sin(lon4-lon2/2),2)))
+#d=2*R*np.arcsin(np.sqrt(np.power(np.sin(lat4-lat2/2),2)+np.cos(lat2)*np.cos(lat4)*np.power(np.sin(lon4-lon2/2),2)))
 snelheid=np.power((np.power(u,2)+np.power(v,2)),0.5)*24*365
 print d[0:9]
 print snelheid[0:9]
@@ -164,7 +164,7 @@ for i in range(len(snelheidgemweek)):
         pp=0
     result=np.append(result,pp)
 plaatje=plt.plot(result)
-#plt.axis([5*12, 6*12, 0, 0.0005])
+plt.axis([5*12, 6*12, 0, 16000])
 plt.show()
 #result=np.array([])
 #for i in range(len(lat)):
